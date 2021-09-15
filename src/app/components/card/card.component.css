@@ -1,0 +1,85 @@
+.card {
+  width: 300px;
+  min-height: 440px;
+  margin: 10px 5px 5px 10px;
+  border-radius: 7px;
+  box-shadow: 0 48px 96px rgba(0, 0, 0, 0.1);
+  font-family: cursive;
+  background-color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-0.5%);
+  box-shadow: 0 48px 80px rgba(0, 0, 0, 0.5);
+}
+
+.card-img {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  background-color: #ff8a53; /* we can remove this after we get the images */
+}
+
+.card-content {
+  padding: 1rem;
+}
+
+.card-header {
+  margin-bottom: 1.5rem;
+  margin-bottom: 0;
+  text-align: center;
+  color: #0d0d0d;
+}
+
+.card-author {
+  margin: 0;
+  font-style: italic;
+  text-align: center;
+  color: gray;
+}
+
+.card-text {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-bottom: 2.5rem;
+  height: 100px;
+  color: #3d3d3d;
+  text-align: justify;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card-btn {
+  display: block;
+  width: 50%;
+  padding: 0.5rem;
+  font-size: 14px;
+  border: none;
+  border-radius: 0.4rem;
+  text-align: center;
+  color: #ff8a53;
+  background-color: #222;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.card-date {
+  font-style: italic;
+  color: gray;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-btn:hover,
+.card-btn:active {
+  background-color: rgb(73, 73, 73);
+  color: #fc8c58;
+}
