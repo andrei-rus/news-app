@@ -1,1 +1,5 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div *ngFor="let article of searchedArticles | async; index as articleIndex">
+        <app-card [article]="article" ></app-card>
+    </div>
+</div>
