@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { debounceTime, delay, distinctUntilChanged, filter, map, shareReplay, switchMap } from 'rxjs/operators';
+import { debounceTime, delay, distinctUntilChanged, filter, map, shareReplay, switchMap, tap } from 'rxjs/operators';
+import { SpinnerService } from '../components/spinner/spinner.service';
 import { Article } from '../interfaces/Articles';
 
 @Injectable({
@@ -10,13 +11,15 @@ export class SearchService {
 
   public searchTerm$ = new BehaviorSubject<string>(undefined);
 
-  constructor() { }
+  constructor(private spinnerService: SpinnerService) { }
 
   search(collectionObs: Observable<Article[]>): Observable<Article[]> {
     const result = this.searchTerm$.pipe(
       distinctUntilChanged(),
       debounceTime(400),
+      tap(() => this.spinnerService.show()),
       switchMap(searchedTerm => this.doSearch(collectionObs, searchedTerm)),
+      tap(() => this.spinnerService.hide()),
       shareReplay(1)
     );
 

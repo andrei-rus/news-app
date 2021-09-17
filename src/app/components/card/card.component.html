@@ -1,15 +1,17 @@
-<div class="card">
-  <!-- <img class="card-img" src="" alt="Image" /> -->
-  <img class="card-img" [src]="article.urlToImage"/>
-  <div class="card-content">
-    <h1 class="card-header">{{ article.title }}</h1>
-    <p class="card-author">{{ article.author }}</p>
-    <p class="card-text">
-      {{article.description}}
-    </p>
-    <div class="card-footer">
-      <p class="card-date"> {{ article.publishedAt }}</p>
-      <button class="card-btn">Read More</button>
+<div class="card" #card>
+    <div>
+        <h1 class="card-header">{{ article.title }}</h1>
+        <a class="close" #closeBtn (click)="close()"></a>
     </div>
-  </div>
+    <img class="card-img" [src]="article.urlToImage" />
+    <div class="card-content">
+        <p class="card-author">{{ article.author }}</p>
+        <p class="card-text">
+            {{article.description}}
+        </p>
+        <div class="card-footer">
+            <p class="card-date"> {{ article.publishedAt | date }}</p>
+            <button class="card-btn" (click)="redirectToNews($event)">Read More</button>
+        </div>
+    </div>
 </div>

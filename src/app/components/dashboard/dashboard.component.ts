@@ -5,6 +5,7 @@ import { DashboardService } from './dashboard.service';
 import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { SearchService } from 'src/app/services/search.service';
+import { SpinnerService } from '../spinner/spinner.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,6 +14,7 @@ import { SearchService } from 'src/app/services/search.service';
 })
 export class DashboardComponent implements OnInit {
 
+  public ishttpLoaded:boolean = false;
   /**
    * Get the articles from the news response.
    */
@@ -20,7 +22,6 @@ export class DashboardComponent implements OnInit {
     this.dashboardService
       .getEverything()
         .pipe(map((result: NewsResponse) => {
-          //this.searchService.searchTerm$.next(undefined);
           return result.articles;
       }));
 

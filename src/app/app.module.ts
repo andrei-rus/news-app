@@ -8,6 +8,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CardComponent } from './components/card/card.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CardComponent } from './components/card/card.component';
     DashboardComponent,
     HeaderComponent,
     FooterComponent,
-    CardComponent
+    CardComponent,
+    SpinnerComponent
   ],
   imports: [BrowserModule, FontAwesomeModule, HttpClientModule],
   providers: [],
